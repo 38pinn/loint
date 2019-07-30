@@ -1,0 +1,11 @@
+- hosts: all
+  gather_facts: no
+
+  tasks:
+
+    - name: Delete interface using aggregate
+      ios_interface:
+        aggregate:
+        - name: Loopback101
+        - name: Loopback102
+        state: present
